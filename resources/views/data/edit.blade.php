@@ -1,8 +1,8 @@
 @include('master.index')
 
-    <div class="container-fluid shadow bg-grey">
+    <div class="container shadow bg-grey text-align: center">
         <div class="row m-3">
-            <div class="col-2">
+            <div class="col-8 text-align: center">
                 <div class="row border-bottom">
                     <h5>Input Data Display</h5>
                 </div>
@@ -11,7 +11,6 @@
                         @csrf
                         @method('put')
                         <input type="hidden" id="id" name="id" value="{{ $data->id }}">
-                        <br>
                         <div class="form-group mt-2">
                             <label for="kode" class="text-light">Kode</label>
                             <input type="text" id="kode" name="kode" class="form-control"

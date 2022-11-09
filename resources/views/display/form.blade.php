@@ -5,11 +5,11 @@
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content bg-grey">
-                        <div class="modal-header dark">
+                        <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Add Data</h5>
-                            <button type="button" class="close" data-dismiss="modal">
+                            <div class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                            </button>
+                            </div>
                         </div>
                         <div class="modal-body bg-grey">
                             <form class="{{ route('form.store') }}" method="post" enctype="multipart/form-data">
@@ -45,8 +45,9 @@
                                     <input type="text" id="tipe" name="tipe" class="form-control" required>
                                 </div>
                                 <div class="form-group mt-2">
-                                    <label for="gambar" class="form-label">Gambar</label>
+                                    <label for="gambar" class="text-light">Gambar</label>
                                     <img class="img-preview img-fluid">
+                                    <br>
                                     <input type="file" id="gambar" name="gambar" class="form-control @error('gambar') is-invalid @enderror" required onchange="previewImage()">    
                                 @error('gambar')
                                     <div class="invalid-feedback">
@@ -67,11 +68,11 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between"
                     style="padding-left: 15px;padding-right: 15px; padding-bottom: 15px;">
-                    <button type="button" class="btn btn-success" data-toggle="modal"
+                    <button type="button" class="btn btn-dark btn-lg" data-toggle="modal"
                         data-target="#exampleModal">
                         Add Data
                     </button>
-                    <button type="back" class="btn btn-success" id="detail-button"
+                    <button type="back" class="btn btn-dark btn-lg" id="detail-button"
                         onclick="history.back('display.index')">Back</button>
                 </div>
                 <div class="table-wrapper table-dark">
@@ -79,7 +80,7 @@
                         <h4>List Data Image</h4>
                     </div>
                     <div>
-                        <table class="table">
+                        <table class="table table-dark table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center">Id</th>
@@ -96,15 +97,15 @@
                             <tbody>
                                 @foreach ($display as $item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->id_gambar }}</td>
-                                        {{-- <td>{{ $item->namamesin }}</td> --}}
-                                        <td>{{ $item->model }}</td>
-                                        <td>{{ $item->tipe }}</td>
-                                        <td>{{ $item->gambar }}</td>
-                                        <td>{{ $item->created_at }}</td>
-                                        <td>{{ $item->updated_at }}</td>
-                                        <td>
+                                        <td class="align-middle">{{ $item->id }}</td>
+                                        <td class="align-middle">{{ $item->id_gambar }}</td>
+                                        {{-- <td class="align-middle">{{ $item->namamesin }}</td> --}}
+                                        <td class="align-middle">{{ $item->model }}</td>
+                                        <td class="align-middle">{{ $item->tipe }}</td>
+                                        <td class="align-middle">{{ $item->gambar }}</td>
+                                        <td class="align-middle">{{ $item->created_at }}</td>
+                                        <td class="align-middle">{{ $item->updated_at }}</td>
+                                        <td class="align-middle">
                                             <div class="btn-group" role="group">
                                                 <form action="{{ route('form.show', $item->id) }}"
                                                     method="head">
