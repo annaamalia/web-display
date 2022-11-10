@@ -14,21 +14,23 @@
 <link rel="stylesheet" href="{{ asset('css/HoldOn.min.css') . '?v=' . time() }}">
 <link rel="stylesheet" href="{{ asset('css/dark.css') . '?v=' . time() }}">
 <link rel="stylesheet" href="{{ asset('css/toastr-v2.1.3.min.css') . '?v=' . time() }}">
-<link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}"> 
+<link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/ana.css') }}">
+
 
 <style>
     h5 {
-        font-family:'Gill Sans';
+        font-family: 'Gill Sans';
         font-style: normal;
     }
 
     @font-face {
-        font-family:'Lucida Sans';
-        font-size:36px;
+        font-family: 'Lucida Sans';
+        font-size: 36px;
     }
 
     .material-icons {
         font-family: 'Lucida Sans';
-        font-size:36px;
+        font-size: 36px;
     }
-    </style>
+</style>
