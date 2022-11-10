@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [DisplayController::class, 'index'])->name('display.index');
+Route::get('/ganti', [DisplayController::class, 'ganti'])->name('display.ganti');
 
 Route::resource('/form', FormController::class);
 Route::resource('/data', DataController::class);

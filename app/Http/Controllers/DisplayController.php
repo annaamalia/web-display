@@ -24,4 +24,17 @@ class DisplayController extends Controller
             ]);
     }
 
+    public function ganti()
+    {
+        $data = DB::table('display_final_cam')
+        ->join('data', 'display_final_cam.webdisplay_webdisplay_final_cam_CODE_VALUE', '=', 'data.kode')
+        ->join('displays', 'data.id_gambar', '=', 'displays.id_gambar')
+        ->select('display_final_cam.*', 'data.id_gambar', 'displays.id_gambar', 'displays.gambar', 'data.model')
+        ->orderBy('id', 'DESC')
+        ->first();
+        return view('display.ganti', [
+                'data' => $data,
+            ]);
+    }
+
 }
