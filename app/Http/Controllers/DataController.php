@@ -16,7 +16,7 @@ class DataController extends Controller
     public function index()
     {
         $data = Data::all();
-        $display = Display::all();
+        $display = Display::all()->pluck('id_gambar', 'id')->unique();
         return view('data.form', [
             'data' => $data,
             'display' => $display,
@@ -66,7 +66,7 @@ class DataController extends Controller
     public function show(Request $request)
     {
         $data = Data::find($request->get('id'));
-        $display = Display::all();
+        $display = Display::all()->pluck('id_gambar')->unique();
         return view('data.edit', [
             'data' => $data,
             'display' => $display,

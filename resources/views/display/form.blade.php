@@ -16,33 +16,7 @@
                             @csrf
                             <div class="form-group mt-2">
                                 <label for="id_gambar" class="text-light">ID Gambar</label>
-                                <select name="id_gambar" id="id_gambar" class="form-control" required>
-                                    <option value="" disabled selected>
-                                        Choose
-                                    </option>
-                                    @foreach ($data as $index => $item)
-                                        <option value="{{ $item }}">{{ $item }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            {{-- <div class="form-group mt-2">
-                                    <label for="namamesin" class="text-light">Nama Mesin</label>
-                                    <input type="text" id="namamesin" name="namamesin" class="form-control" required>
-                                </div> --}}
-                            <div class="form-group mt-2">
-                                <label for="model" class="text-light">Model</label>
-                                <select name="model" id="model" class="form-control" required>
-                                    <option value="" disabled selected>
-                                        Choose
-                                    </option>
-                                    @foreach ($model as $index => $item)
-                                        <option value="{{ $item }}">{{ $item }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="tipe" class="text-light">Tipe</label>
-                                <input type="text" id="tipe" name="tipe" class="form-control" required>
+                                <input type="text" id="id_gambar" name="id_gambar" class="form-control" required>
                             </div>
                             <div class="form-group mt-2">
                                 <label for="gambar" class="text-light">Gambar</label>
@@ -84,11 +58,7 @@
                     <table class="table table-dark table-striped">
                         <thead>
                             <tr>
-                                <th class="text-center">Id</th>
                                 <th class="text-center">ID Gambar</th>
-                                {{-- <th class="text-center">Nama Mesin</th> --}}
-                                <th class="text-center">Model</th>
-                                <th class="text-center">Tipe</th>
                                 <th class="text-center">Gambar</th>
                                 <th class="text-center">Created</th>
                                 <th class="text-center">Updated</th>
@@ -98,11 +68,7 @@
                         <tbody>
                             @foreach ($display as $item)
                                 <tr>
-                                    <td class="align-middle">{{ $item->id }}</td>
                                     <td class="align-middle">{{ $item->id_gambar }}</td>
-                                    {{-- <td class="align-middle">{{ $item->namamesin }}</td> --}}
-                                    <td class="align-middle">{{ $item->model }}</td>
-                                    <td class="align-middle">{{ $item->tipe }}</td>
                                     <td class="align-middle">{{ $item->gambar }}</td>
                                     <td class="align-middle">{{ $item->created_at }}</td>
                                     <td class="align-middle">{{ $item->updated_at }}</td>

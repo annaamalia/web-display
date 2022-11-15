@@ -20,17 +20,27 @@
 
 <style>
     h5 {
-        font-family: 'Gill Sans';
+        font-family:Helvetica;
         font-style: normal;
     }
 
-    @font-face {
-        font-family: 'Lucida Sans';
-        font-size: 36px;
+    tr {
+        font-family:'Trebuchet MS', sans-serif ;
+        font-size: normal;
     }
 
-    .material-icons {
-        font-family: 'Lucida Sans';
-        font-size: 36px;
+    h4 {
+        font-family:'Trebuchet MS', sans-serif ;
+        font-size: normal;
+    }
+
+    h1 {
+        font-family:'Trebuchet MS', sans-serif ;
+        font-size: normal;
+    }
+
+    button {
+        font-family:'Trebuchet MS', sans-serif ;
+        font-size: 20px;
     }
 </style>

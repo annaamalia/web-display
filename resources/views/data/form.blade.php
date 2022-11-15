@@ -24,7 +24,14 @@
                                 </div>
                                 <div class="form-group mt-2">
                                     <label for="id_gambar" class="text-light">ID Gambar</label>
-                                    <input type="text" id="id_gambar" name="id_gambar" class="form-control" required>
+                                    <select name="id_gambar" id="id_gambar" class="form-control" required>
+                                        <option value="" disabled selected>
+                                            Choose
+                                        </option>
+                                        @foreach ($display as $index => $item)
+                                            <option value="{{ $item }}">{{ $item }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group flex-button-group mt-4">
                                     <button type="reset" class="btn btn-danger text-uppercase w-50">Reset</button>
@@ -48,13 +55,12 @@
                 </div>
                 <div class="table-wrapper table-dark">
                     <div class="table-toolbar text-center" style="padding-bottom: 1rem">
-                        <h4>List Data Display</h4>
+                        <h4>List Data DC Code</h4>
                     </div>
                     <div>
                         <table class="table table-dark table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Id</th>
                                     <th class="text-center">Kode</th>
                                     <th class="text-center">Model</th>
                                     <th class="text-center">ID Gambar</th>
@@ -66,7 +72,6 @@
                             <tbody>
                                 @foreach ($data as $item)
                                     <tr>
-                                        <td class="align-middle">{{ $item->id }}</td>
                                         <td class="align-middle">{{ $item->kode }}</td>
                                         <td class="align-middle">{{ $item->model }}</td>
                                         <td class="align-middle">{{ $item->id_gambar }}</td>

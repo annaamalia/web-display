@@ -16,12 +16,8 @@ class FormController extends Controller
     public function index()
     {
         $display = Display::all();
-        $data = Data::all()->pluck('id_gambar', 'id')->unique();
-        $model = Data::all()->pluck('model', 'id')->unique();
         return view('display.form', [
             'display' => $display,
-            'data' => $data,
-            'model' => $model,
         ]);
     }
 
@@ -45,9 +41,6 @@ class FormController extends Controller
     {
         $validatedData = $request->validate([
             'id_gambar'               =>'required',
-            // 'namamesin'          =>'required',
-            'model'               =>'required',
-            'tipe'               =>'required',
             'gambar'              =>'image|file|max:4096',
         ]);
 
@@ -57,9 +50,6 @@ class FormController extends Controller
 
         $display = new Display;
         $display->id_gambar = $validatedData['id_gambar'];
-        // $display->namamesin = $validatedData['namamesin'];
-        $display->model = $validatedData['model'];
-        $display->tipe = $validatedData['tipe'];
         $display->gambar = $validatedData['gambar'];
 
         $display->save();
@@ -76,12 +66,8 @@ class FormController extends Controller
     public function show(Request $request)
     {
         $display = Display::find($request->get('id'));
-        $data = Data::all()->pluck('id_gambar', 'id')->unique();
-        $model = Data::all()->pluck('model', 'id')->unique();
         return view('display.edit', [
             'display' => $display,
-            'data' => $data,
-            'model' => $model,
         ]);
     }
 
@@ -107,9 +93,6 @@ class FormController extends Controller
     {
         $validatedData = $request->validate([
             'id_gambar'               =>'required',
-            // 'namamesin'               =>'required',
-            'model'               =>'required',
-            'tipe'               =>'required',
             'gambar'               =>'image|file|max:4096',
 
         ]);
@@ -120,9 +103,6 @@ class FormController extends Controller
 
         $display = Display::find($request->get('id'));
         $display->id_gambar = $validatedData['id_gambar'];
-        // $display->namamesin = $validatedData['namamesin'];
-        $display->model = $validatedData['model'];
-        $display->tipe = $validatedData['tipe'];
         $display->gambar = $validatedData['gambar'];
 
         $display->save();

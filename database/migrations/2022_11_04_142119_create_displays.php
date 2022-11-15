@@ -16,9 +16,6 @@ return new class extends Migration
         Schema::create('display', function (Blueprint $table) {
             $table->id();
             $table->string('id_gambar');
-            // $table->string('namamesin');
-            $table->string('model');
-            $table->string('tipe');
             $table->string('gambar');
             $table->timestamps();
         });

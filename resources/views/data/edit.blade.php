@@ -23,8 +23,13 @@
                         </div>
                         <div class="form-group mt-2">
                             <label for="id_gambar" class="text-light">ID Gambar</label>
-                            <input type="text" id="id_gambar" name="id_gambar" class="form-control"
-                                value="{{ $data->id_gambar }}" autocomplete="off" required>
+                            <select class="form-control" name="id_gambar" id="id_gambar" required>
+                                <option value="" disabled>Choose</option>
+                                @foreach ($display as $index)
+                                    <option value="{{ $index }}" @if ($index == $data->id_gambar) selected @endif>
+                                        {{ $index }}</option>
+                                @endforeach
+                            </select>                   
                         </div>
                         <div class="form-group flex-button-group mt-4">
                             <button type="reset" class="btn btn-danger text-uppercase w-50">Reset</button>

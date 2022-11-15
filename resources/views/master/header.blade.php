@@ -4,8 +4,8 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <a href="{{ route('display.index') }}"  class="nav-link text-decoration-none text-light"><h5>Home</h5></a>
-          <li><a href="{{ route('form.store') }}" class="nav-link text-decoration-none text-light"><h5>Add Image</h5></a></li>
-          <li><a href="{{ route('data.store') }}" class="nav-link text-decoration-none text-light"><h5>Add Data</h5></a></li>
+          <a href="{{ route('form.store') }}" class="nav-link text-decoration-none text-light"><h5>Add Image</h5></a>
+          <a href="{{ route('data.store') }}" class="nav-link text-decoration-none text-light"><h5>Add Data</h5></a>
         </ul>
 
         <div class="dropdown text-end">
