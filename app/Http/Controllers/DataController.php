@@ -20,6 +20,7 @@ class DataController extends Controller
         return view('data.form', [
             'data' => $data,
             'display' => $display,
+            'ccd' => 'ccd',
         ]);
     }
 

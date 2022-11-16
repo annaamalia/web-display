@@ -7,22 +7,22 @@
                     <h5>Input Data DC Code</h5>
                 </div>
                 <div class="row">
-                    <form class="{{ route('form.update', $display->id) }}" method="post" enctype="multipart/form-data">
+                    <form class="{{ route('formrotor.update', $displayrotor->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
-                        <input type="hidden" id="id" name="id" value="{{ $display->id }}">
+                        <input type="hidden" id="id" name="id" value="{{ $displayrotor->id }}">
                         <br>
                         <div class="form-group mt-2">
                             <label for="id_gambar" class="text-light">ID Gambar</label>
                             <input type="text" id="id_gambar" name="id_gambar" class="form-control"
-                            value="{{ $display->id_gambar }}" autocomplete="off" required>
+                            value="{{ $displayrotor->id_gambar }}" autocomplete="off" required>
                         </div>
                         <div class="form-group mt-2">
                             <label for="gambar" class="text-light">Gambar</label>
                             <img class="img-preview img-fluid">
                             <br>
                             <input type="file" id="gambar" name="gambar" class="form-control"
-                                value="{{ $display->gambar }}" autocomplete="off" required onchange="previewImage()">
+                                value="{{ $displayrotor->gambar }}" autocomplete="off" required onchange="previewImage()">
                         </div>                        
                         <div class="form-group flex-button-group mt-4">
                             <button type="reset" class="btn btn-danger text-uppercase w-50">Reset</button>
@@ -32,11 +32,11 @@
                 </div>
             </div>
             <div class="col-9">
-                <div id="id" name="id" value="{{ $display->id }}">
-                    <img img class="center-fit"  src="{{ asset('storage/' . $display->gambar) }}">
+                <div id="id" name="id" value="{{ $displayrotor->id }}">
+                    <img img class="center-fit"  src="{{ asset('storage/' . $displayrotor->gambar) }}">
                 </div>
             </div>
         </div>
     </div>
 
-@include('display.script')
+@include('display-rotor.script')

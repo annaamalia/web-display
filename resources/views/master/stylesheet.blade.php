@@ -40,7 +40,7 @@
     }
 
     button {
-        font-family:'Trebuchet MS', sans-serif ;
-        font-size: 20px;
+        font-family:Helvetica;
+        font-style: normal;
     }
 </style>

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Data;
-use App\Models\Display;
+use App\Models\DataFrontHousing;
+use App\Models\DisplayFrontHousing;
 use Illuminate\Http\Request;
 
-class FormController extends Controller
+class DataFrontHousingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,11 @@ class FormController extends Controller
      */
     public function index()
     {
-        $display = Display::all();
-        return view('display.form', [
-            'display' => $display,
+        $datafh = DataFrontHousing::all();
+        $displayfh = DisplayFrontHousing::all()->pluck('id_gambar', 'id')->unique();
+        return view('data-fh.form', [
+            'datafh' => $datafh,
+            'displayfh' => $displayfh,
         ]);
     }
 
@@ -40,19 +42,17 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'kode'                =>'required',
+            'model'               =>'required',
             'id_gambar'               =>'required',
-            'gambar'              =>'image|file|max:4096',
         ]);
 
-        if($request->file('gambar')) {
-            $validatedData['gambar'] = $request->file('gambar')->store('post-images'); 
-        }
+        $datafh = new DataFrontHousing();
+        $datafh->kode = $validatedData['kode'];
+        $datafh->model = $validatedData['model'];
+        $datafh->id_gambar = $validatedData['id_gambar'];
 
-        $display = new Display;
-        $display->id_gambar = $validatedData['id_gambar'];
-        $display->gambar = $validatedData['gambar'];
-
-        $display->save();
+        $datafh->save();
 
         return redirect()->back();
     }
@@ -65,9 +65,11 @@ class FormController extends Controller
      */
     public function show(Request $request)
     {
-        $display = Display::find($request->get('id'));
-        return view('display.edit', [
-            'display' => $display,
+        $datafh = DataFrontHousing::find($request->get('id'));
+        $displayfh = DisplayFrontHousing::all()->pluck('id_gambar')->unique();
+        return view('data-fh.edit', [
+            'datafh' => $datafh,
+            'displayfh' => $displayfh,
         ]);
     }
 
@@ -86,40 +88,37 @@ class FormController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Display  $display
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Display $display)
+    public function update(Request $request, DataFrontHousing $datafh)
     {
-        // dd($request);
         $validatedData = $request->validate([
+            'kode'               =>'required',
+            'model'               =>'required',
             'id_gambar'               =>'required',
-            'gambar'               =>'image|file|max:4096',
-
         ]);
-        if($request->file('gambar')) {
-            $validatedData['gambar'] = $request->file('gambar')->store('post-images'); 
-        }
-        $display = Display::find($request->get('id'));
-        $display->id_gambar = $validatedData['id_gambar'];
-        $display->gambar = $validatedData['gambar'];
 
-        $display->save();
+        $datafh = DataFrontHousing::find($request->get('id'));
+        $datafh->kode = $validatedData['kode'];
+        $datafh->model = $validatedData['model'];
+        $datafh->id_gambar = $validatedData['id_gambar'];
 
-        return redirect(route('form.store'));
+        $datafh->save();
+
+        return redirect(route('datafh.store'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Display  $display
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
     {
-        $display = Display::find($request->get('id'));
-        $display->delete();
+        $datafh = DataFrontHousing::find($request->get('id'));
+        $datafh->delete();
         return redirect()->back();
     }
-
 }
