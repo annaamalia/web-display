@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\FormRotorController;
+use App\Http\Controllers\FormRearController;
 use App\Http\Controllers\FormFrontHousingController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\DataRotorController;
+use App\Http\Controllers\DataRearController;
 use App\Http\Controllers\DataFrontHousingController;
 use App\Http\Controllers\DisplayController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +33,9 @@ Route::get('/ganti_rotor', [DisplayController::class, 'ganti_rotor'])->name('dis
 Route::get('/front_housing', [DisplayController::class, 'front_housing'])->name('display-fh.index');
 Route::get('/ganti_fh', [DisplayController::class, 'ganti_fh'])->name('display-fh.ganti');
 
+Route::get('/rear', [DisplayController::class, 'rear'])->name('display-rear.index');
+Route::get('/ganti_rear', [DisplayController::class, 'ganti_rear'])->name('display-rear.ganti');
+
 Route::resource('/form', FormController::class);
 Route::resource('/data', DataController::class);
 
@@ -39,3 +44,6 @@ Route::resource('/datarotor', DataRotorController::class);
 
 Route::resource('/formfh', FormFrontHousingController::class);
 Route::resource('/datafh', DataFrontHousingController::class);
+
+Route::resource('/formrear', FormRearController::class);
+Route::resource('/datarear', DataRearController::class);

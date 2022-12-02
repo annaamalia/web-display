@@ -18,7 +18,7 @@
                 <a href="{{ route('formfh.store') }}" class="nav-link text-decoration-none text-light"><h5>Add Image</h5></a>
             </button>
             <button type="button" class="btn btn-dark text-uppercase w-20">
-                <a href="{{ route('formfh.store') }}" class="nav-link text-decoration-none text-light"><h5>Add Image</h5></a>
+                <a href="{{ route('datafh.store') }}" class="nav-link text-decoration-none text-light"><h5>Add Data</h5></a>
             </button>
         </div>
     @endif

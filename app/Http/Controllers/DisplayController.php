@@ -94,4 +94,31 @@ class DisplayController extends Controller
                 'datafh' => $datafh,
             ]);
     }
+
+    public function rear()
+    {
+        $datarear = DB::table('display_rear')
+        ->join('data_rears', 'display_rear.webdisplay_webdisplay_rear_CODE_VALUE', '=', 'data_rears.kode')
+        ->join('display_rears', 'data_rears.id_gambar', '=', 'display_rears.id_gambar')
+        ->select('display_rear.*', 'data_rears.id_gambar', 'display_rears.id_gambar', 'display_rears.gambar', 'data_rears.model')
+        ->orderBy('id', 'DESC')
+        ->first();
+        return view('display-rear.index', [
+                'datarear' => $datarear,
+            ]);
+    }
+
+    public function ganti_rear()
+    {
+        $datarear = DB::table('display_rear')
+        ->join('data_rears', 'display_rear.webdisplay_webdisplay_rear_CODE_VALUE', '=', 'data_rears.kode')
+        ->join('display_rears', 'data_rears.id_gambar', '=', 'display_rears.id_gambar')
+        ->select('display_rear.*', 'data_rears.id_gambar', 'display_rears.id_gambar', 'display_rears.gambar', 'data_rears.model')
+        ->orderBy('id', 'DESC')
+        ->first();
+        return view('display-rear.ganti', [
+                'datarear' => $datarear,
+            ]);
+    }
+
 }

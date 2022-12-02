@@ -11,7 +11,8 @@
             <div class="dropdown-menu">
               <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('display.index') }}">CCD</a></li>
               <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('display-rotor.index') }}">Rotor</a></li>
-              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('display-fh.index') }}">Front Housing</a></li>
+              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('display-fh.index') }}">Front</a></li>
+              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('display-rear.index') }}">Rear</a></li>
             </div>
           </div>
           <div class="dropdown mx-3">
@@ -21,7 +22,8 @@
             <div class="dropdown-menu">
               <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('form.store') }}">CCD</a></li>
               <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('formrotor.store') }}">Rotor</a></li>
-              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('formfh.store') }}">Front Housing</a></li>
+              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('formfh.store') }}">Front</a></li>
+              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('formrear.store') }}">Rear</a></li>
             </div>
           </div>
           <div class="dropdown mx-3">
@@ -31,7 +33,8 @@
             <div class="dropdown-menu">
               <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('data.store') }}">CCD</a></li>
               <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('datarotor.store') }}">Rotor</a></li>
-              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('datafh.store') }}">Front Housing</a></li>
+              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('datafh.store') }}">Front</a></li>
+              <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('datarear.store') }}">Rear</a></li>
             </div>
           </div>
         </ul>
