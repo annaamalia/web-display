@@ -4,7 +4,7 @@
         <div class="row m-3">
             <div class="col-3">
                 <div class="row border-bottom">
-                    <h5>Input Data DC Code</h5>
+                    <h5>Input Data Image</h5>
                 </div>
                 <div class="row">
                     <form class="{{ route('formrotor.update', $displayrotor->id) }}" method="post" enctype="multipart/form-data">

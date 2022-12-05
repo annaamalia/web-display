@@ -6,7 +6,7 @@
             <div class="modal-dialog">
                 <div class="modal-content bg-grey">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Data</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Add Data Image</h5>
                         <div class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </div>
@@ -45,7 +45,7 @@
             <div class="d-flex justify-content-between"
                 style="padding-left: 15px;padding-right: 15px; padding-bottom: 15px;">
                 <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#exampleModal">
-                    Add Data
+                    Add Image
                 </button>
                 <button type="back" class="btn btn-dark btn-lg" id="detail-button"
                     onclick="history.back('display-fh.index')">Back</button>

@@ -20,7 +20,7 @@
 
 <style>
     h5 {
-        font-family:Helvetica;
+        font-family:'Trebuchet MS', sans-serif;
         font-style: normal;
     }
 
@@ -40,7 +40,13 @@
     }
 
     button {
-        font-family:Helvetica;
+        font-family:'Trebuchet MS', sans-serif;
+        font-style: normal;
+        font-size:35cm;
+    }
+
+    a {
+        font-family:'Trebuchet MS', sans-serif;
         font-style: normal;
     }
 </style>

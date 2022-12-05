@@ -6,7 +6,7 @@
           <a href="{{ route('dashboard') }}" class="nav-link text-decoration-none text-light"><h5>Dashboard</h5></a>
           <div class="dropdown mx-3">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-              Home
+              SOP
             </button>
             <div class="dropdown-menu">
               <li><a class="dropdown-item nav-link text-decoration-none text-dark" href="{{ route('display.index') }}">CCD</a></li>

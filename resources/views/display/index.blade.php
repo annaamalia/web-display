@@ -2,14 +2,14 @@
 
 <div class="imgbox" id="imgbox">
     @if(!empty($data))
-        <p class="h3 font-weight-light text-capitalize text-center">
+        <div class="h3 font-weight-light text-capitalize text-center">
             <td>{{ $data->model }}</td>
-        </p>
+        </div>
         <img class="center-fit" src="{{ asset('storage/' . $data->gambar) }}">
     @else
-        <p class="h1 font-light text-center">
+        <div class="h1 font-light text-center">
             <td class="align middle">Opps! SOP Image Data Unavailable</td>
-        </p>
+        </div>
         <img class="center-fit" src="{{ asset('images/log_white.png') }}">
 
         <br>
